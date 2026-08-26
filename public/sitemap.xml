@@ -1,147 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://www.k-thoughts.site/</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/about</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/chongqing-travel</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/cc-subtitle-words-query</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/dental-root-canal-treatment-records</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/docker-architecture-and-principles</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/build-basic-logic-gates</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/how-to-work-by-tomcat</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/linux-command</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/linux-command2</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/jvm-hotspot-jvm-params</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/beyond-amani</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/share-my-cats</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/start-notion-blog</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/golang-practice-in-jike-backend</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/drools</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/implementing-distributed-locks-based-on-zookeeper-and-redis</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/redis-introduce</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/share-some-technical-blogs</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/java-multi-threading-practice</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/netty-sample</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/introduction-to-rpc-framework</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/jvm-tuning</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/jvm-how-to-quickly-locate-the-CPU-100-problem</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/linux-troubleshooting-commands</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/jvm-online-problem-location</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.k-thoughts.site/mysql-innodb-engine%20-introduction</loc>
-  <lastmod>2023-11-11T14:44:36+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://www.k-thoughts.site</loc><lastmod>2026-08-26T17:37:57.106Z</lastmod><changefreq>weekly</changefreq><priority>1</priority></url>
+<url><loc>https://www.k-thoughts.site/disruptor-w1</loc><lastmod>2026-08-26T17:37:57.106Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/web-socket-message</loc><lastmod>2025-01-30T12:20:14.435Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/java-thread-example</loc><lastmod>2024-08-17T16:00:15.565Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/do-we-still-need-to-practice-writing</loc><lastmod>2024-08-17T15:51:44.562Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/making-implicit-concepts-explicit</loc><lastmod>2024-08-03T18:39:34.665Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/cross-border-e-commerce-logistics-business-sharing</loc><lastmod>2024-01-01T13:05:12.328Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/chongqing-travel</loc><lastmod>2023-11-18T14:19:08.521Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/cc-subtitle-words-query</loc><lastmod>2023-11-18T18:28:18.697Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/dental-root-canal-treatment-records</loc><lastmod>2023-10-29T15:08:04.227Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/docker-architecture-and-principles</loc><lastmod>2023-10-29T15:04:05.423Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/build-basic-logic-gates</loc><lastmod>2023-10-29T10:07:17.663Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/how-to-work-by-tomcat</loc><lastmod>2023-10-29T07:21:25.099Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/linux-command</loc><lastmod>2023-10-29T07:21:22.772Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/linux-command2</loc><lastmod>2023-10-29T07:21:21.385Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/jvm-hotspot-jvm-params</loc><lastmod>2023-10-29T07:21:18.008Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/beyond-amani</loc><lastmod>2023-10-29T10:14:44.607Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/share-my-cats</loc><lastmod>2023-10-29T10:14:47.023Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/start-notion-blog</loc><lastmod>2023-10-29T10:14:49.649Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/golang-practice-in-jike-backend</loc><lastmod>2023-11-18T18:24:04.911Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/drools</loc><lastmod>2023-10-29T07:21:20.368Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/implementing-distributed-locks-based-on-zookeeper-and-redis</loc><lastmod>2023-11-11T14:32:41.058Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/redis-introduce</loc><lastmod>2023-10-29T07:22:49.015Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/share-some-technical-blogs</loc><lastmod>2023-10-29T10:15:04.523Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/java-multi-threading-practice</loc><lastmod>2023-10-29T10:08:15.721Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/netty-sample</loc><lastmod>2023-10-29T07:21:18.861Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/introduction-to-rpc-framework</loc><lastmod>2023-10-29T10:06:30.222Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/jvm-tuning</loc><lastmod>2023-10-29T07:21:17.458Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/jvm-how-to-quickly-locate-the-CPU-100-problem</loc><lastmod>2023-10-29T07:18:59.632Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/linux-troubleshooting-commands</loc><lastmod>2023-10-29T10:05:45.666Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/jvm-online-problem-location</loc><lastmod>2023-10-29T07:17:33.617Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/about</loc><lastmod>2025-10-14T16:56:42.277Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.k-thoughts.site/mysql-innodb-engine%20-introduction</loc><lastmod>2023-10-29T10:08:40.802Z</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

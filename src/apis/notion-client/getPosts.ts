@@ -43,6 +43,9 @@ export const getPosts = async () => {
       properties.createdTime = new Date(
         pageBlockValue?.created_time
       ).toString()
+      properties.updatedTime = new Date(
+        pageBlockValue?.last_edited_time || pageBlockValue?.created_time
+      ).toISOString()
       properties.fullWidth =
         (pageBlockValue?.format as any)?.page_full_width ?? false
 

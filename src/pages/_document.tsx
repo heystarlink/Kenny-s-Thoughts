@@ -16,7 +16,7 @@ class MyDocument extends Document {
             rel="alternate"
             type="application/rss+xml"
             title="RSS 2.0"
-            href="/feed"
+            href="/feed.xml"
           ></link>
           {/* google search console */}
           {CONFIG.googleSearchConsole.enable === true && (
@@ -35,6 +35,18 @@ class MyDocument extends Document {
                 content={CONFIG.naverSearchAdvisor.config.siteVerification}
               />
             </>
+          )}
+          {CONFIG.bingWebmaster.enable === true && (
+            <meta
+              name="msvalidate.01"
+              content={CONFIG.bingWebmaster.config.siteVerification}
+            />
+          )}
+          {CONFIG.baiduSiteVerification.enable === true && (
+            <meta
+              name="baidu-site-verification"
+              content={CONFIG.baiduSiteVerification.config.siteVerification}
+            />
           )}
         </Head>
         <body>

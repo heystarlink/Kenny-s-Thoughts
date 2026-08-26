@@ -56,6 +56,18 @@ const CONFIG = {
       siteVerification: process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION || "",
     },
   },
+  bingWebmaster: {
+    enable: Boolean(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION),
+    config: {
+      siteVerification: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || "",
+    },
+  },
+  baiduSiteVerification: {
+    enable: Boolean(process.env.NEXT_PUBLIC_BAIDU_SITE_VERIFICATION),
+    config: {
+      siteVerification: process.env.NEXT_PUBLIC_BAIDU_SITE_VERIFICATION || "",
+    },
+  },
   utterances: {
     enable: false,
     config: {

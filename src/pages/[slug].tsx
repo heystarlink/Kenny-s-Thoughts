@@ -11,6 +11,7 @@ import { queryKey } from "src/constants/queryKey"
 import { dehydrate } from "@tanstack/react-query"
 import usePostQuery from "src/hooks/usePostQuery"
 import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
+import getSeoDescription from "src/libs/utils/notion/getSeoDescription"
 
 const filter: FilterPostsOptions = {
   acceptStatus: ["Public", "PublicOnDetail"],
@@ -36,10 +37,24 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const detailPosts = filterPosts(posts, filter)
   const postDetail = detailPosts.find((t: any) => t.slug === slug)
-  const recordMap = await getRecordMap(postDetail?.id!)
+  if (!postDetail) {
+    return {
+      notFound: true,
+      revalidate: CONFIG.revalidateTime,
+    }
+  }
+
+  const recordMap = await getRecordMap(postDetail.id)
+  const summary =
+    postDetail.summary ||
+    getSeoDescription(
+      recordMap,
+      `${postDetail.title} - ${CONFIG.blog.description}`
+    )
 
   await queryClient.prefetchQuery(queryKey.post(`${slug}`), () => ({
     ...postDetail,
+    summary,
     recordMap,
   }))
 
@@ -57,8 +72,7 @@ const DetailPage: NextPageWithLayout = () => {
   if (!post) return <CustomError />
 
   const image =
-    post.thumbnail ??
-    CONFIG.ogImageGenerateURL ??
+    post.thumbnail ||
     `${CONFIG.ogImageGenerateURL}/${encodeURIComponent(post.title)}.png`
 
   const date = post.date?.start_date || post.createdTime || ""
@@ -66,10 +80,13 @@ const DetailPage: NextPageWithLayout = () => {
   const meta = {
     title: post.title,
     date: new Date(date).toISOString(),
+    modifiedDate: post.updatedTime || new Date(date).toISOString(),
     image: image,
-    description: post.summary || "",
+    description: post.summary || `${post.title} - ${CONFIG.blog.description}`,
     type: post.type[0],
-    url: `${CONFIG.link}/${post.slug}`,
+    authorName: post.author?.[0]?.name,
+    tags: post.tags,
+    url: `${CONFIG.link}/${encodeURI(post.slug)}`,
   }
 
   return (

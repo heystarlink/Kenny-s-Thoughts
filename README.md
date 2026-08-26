@@ -40,6 +40,8 @@ Next.js static blog using Notion as a Content Management System (CMS). Supports 
    - `NOTION_PAGE_ID` (Required): The Notion page Id got from the Share to Web URL. This is not the entire URL, but just the NOTION_PAGE_ID part as shown above.
    - `NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID` : For Google analytics Plugin.
    - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` : For Google search console Plugin.
+   - `NEXT_PUBLIC_BING_SITE_VERIFICATION` : For Bing Webmaster Tools verification.
+   - `NEXT_PUBLIC_BAIDU_SITE_VERIFICATION` : For Baidu Search Resource Platform verification.
    - `NEXT_PUBLIC_NAVER_SITE_VERIFICATION` : For Naver search advisor Plugin.
 
 ## 10 Steps to build your own morethan-log (by 23.06.23)
