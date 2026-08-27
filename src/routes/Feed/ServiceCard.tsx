@@ -1,15 +1,16 @@
 import { CONFIG } from "site.config"
 import React from "react"
 import { AiFillCodeSandboxCircle } from "react-icons/ai"
+import { FiFolder } from "react-icons/fi"
 import styled from "@emotion/styled"
-import { Emoji } from "src/components/Emoji"
 
 const ServiceCard: React.FC = () => {
   if (!CONFIG.projects) return null
   return (
     <>
       <StyledTitle>
-        <Emoji>🌟</Emoji> 项目
+        <FiFolder aria-hidden="true" />
+        项目
       </StyledTitle>
       <StyledWrapper>
         {CONFIG.projects.map((project, idx) => (
@@ -31,6 +32,9 @@ const ServiceCard: React.FC = () => {
 export default ServiceCard
 
 const StyledTitle = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   padding: 0.25rem;
   margin-bottom: 0.75rem;
 `

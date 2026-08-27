@@ -6,15 +6,16 @@ import {
   AiOutlineInstagram,
   AiOutlineMail,
 } from "react-icons/ai"
+import { FiMessageCircle } from "react-icons/fi"
 import { CONFIG } from "site.config"
-import { Emoji } from "src/components/Emoji"
 import { resolveExternalUrl } from "src/libs/utils"
 
 const ContactCard: React.FC = () => {
   return (
     <>
       <StyledTitle>
-        <Emoji>💬</Emoji> 联系
+        <FiMessageCircle aria-hidden="true" />
+        联系
       </StyledTitle>
       <StyledWrapper>
         {CONFIG.profile.github && (
@@ -75,6 +76,9 @@ const ContactCard: React.FC = () => {
 export default ContactCard
 
 const StyledTitle = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   padding: 0.25rem;
   margin-bottom: 0.75rem;
 `

@@ -2,6 +2,7 @@ import { CONFIG } from "site.config"
 import Image from "next/image"
 import React from "react"
 import styled from "@emotion/styled"
+import { FiUser } from "react-icons/fi"
 
 type Props = {
   className?: string
@@ -10,7 +11,10 @@ type Props = {
 const MobileProfileCard: React.FC<Props> = () => {
   return (
     <StyledWrapper>
-      <div className="top">💻 关于我</div>
+      <div className="top">
+        <FiUser aria-hidden="true" />
+        关于我
+      </div>
       <div className="mid">
         <div className="wrapper">
           <Image
@@ -41,6 +45,9 @@ const StyledWrapper = styled.div`
   }
 
   > .top {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
     padding: 0.25rem;
     margin-bottom: 0.75rem;
   }

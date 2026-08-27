@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 import Image from "next/image"
 import React from "react"
 import { CONFIG } from "site.config"
-import { Emoji } from "src/components/Emoji"
+import { FiUser } from "react-icons/fi"
 
 type Props = {}
 
@@ -10,14 +10,16 @@ const ProfileCard: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div className="title">
-        <Emoji>💻</Emoji> 关于我
+        <FiUser aria-hidden="true" />
+        关于我
       </div>
       <div className="content">
         <div className="top">
           <Image
             src={CONFIG.profile.image}
             fill
-            sizes="222px"
+            priority
+            sizes="150px"
             alt=""
             css={{ objectFit: "cover" }}
           />
@@ -36,6 +38,9 @@ export default ProfileCard
 
 const StyledWrapper = styled.div`
   > .title {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
     padding: 0.25rem;
     margin-bottom: 0.75rem;
   }

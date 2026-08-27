@@ -3,41 +3,12 @@ import Image from "next/image"
 import Link from "next/link"
 import { ExtendedRecordMap } from "notion-types"
 import useScheme from "src/hooks/useScheme"
-import { FC, useEffect } from "react"
+import { FC, useEffect, useMemo, useRef, useState } from "react"
 import Prism from "prismjs/prism"
-
-import "prismjs/components/prism-markup-templating.js"
-import "prismjs/components/prism-markup.js"
-import "prismjs/components/prism-bash.js"
-import "prismjs/components/prism-c.js"
-import "prismjs/components/prism-cpp.js"
-import "prismjs/components/prism-csharp.js"
-import "prismjs/components/prism-docker.js"
-import "prismjs/components/prism-java.js"
-import "prismjs/components/prism-js-templates.js"
-import "prismjs/components/prism-coffeescript.js"
-import "prismjs/components/prism-diff.js"
-import "prismjs/components/prism-git.js"
-import "prismjs/components/prism-go.js"
-import "prismjs/components/prism-kotlin.js"
-import "prismjs/components/prism-graphql.js"
-import "prismjs/components/prism-handlebars.js"
-import "prismjs/components/prism-less.js"
-import "prismjs/components/prism-makefile.js"
-import "prismjs/components/prism-markdown.js"
-import "prismjs/components/prism-objectivec.js"
-import "prismjs/components/prism-ocaml.js"
-import "prismjs/components/prism-python.js"
-import "prismjs/components/prism-reason.js"
-import "prismjs/components/prism-rust.js"
-import "prismjs/components/prism-sass.js"
-import "prismjs/components/prism-scss.js"
-import "prismjs/components/prism-solidity.js"
-import "prismjs/components/prism-sql.js"
-import "prismjs/components/prism-stylus.js"
-import "prismjs/components/prism-swift.js"
-import "prismjs/components/prism-wasm.js"
-import "prismjs/components/prism-yaml.js"
+import {
+  getCodeLanguages,
+  loadPrismLanguages,
+} from "src/libs/prism/loadLanguages"
 
 // core styles shared by all of react-notion-x (required)
 import "react-notion-x/src/styles.css"
@@ -90,27 +61,51 @@ type Props = {
 
 const NotionRenderer: FC<Props> = ({ recordMap }) => {
   const [scheme] = useScheme()
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  const languages = useMemo(() => getCodeLanguages(recordMap), [recordMap])
+  const [languagesReady, setLanguagesReady] = useState(false)
 
   useEffect(() => {
-    Prism.highlightAll()
-  }, [recordMap])
+    let active = true
+    setLanguagesReady(false)
+
+    loadPrismLanguages(languages).then(() => {
+      if (active) setLanguagesReady(true)
+    })
+
+    return () => {
+      active = false
+    }
+  }, [languages])
+
+  useEffect(() => {
+    if (!languagesReady || !wrapperRef.current) return
+
+    const frame = requestAnimationFrame(() => {
+      if (wrapperRef.current) Prism.highlightAllUnder(wrapperRef.current)
+    })
+
+    return () => cancelAnimationFrame(frame)
+  }, [languagesReady, recordMap])
 
   return (
-    <StyledWrapper>
-      <_NotionRenderer
-        darkMode={scheme === "dark"}
-        recordMap={recordMap}
-        components={{
-          Code,
-          Collection,
-          Equation,
-          Modal,
-          Pdf,
-          nextImage: Image,
-          nextLink: Link,
-        }}
-        mapPageUrl={mapPageUrl}
-      />
+    <StyledWrapper ref={wrapperRef}>
+      {languagesReady && (
+        <_NotionRenderer
+          darkMode={scheme === "dark"}
+          recordMap={recordMap}
+          components={{
+            Code,
+            Collection,
+            Equation,
+            Modal,
+            Pdf,
+            nextImage: Image,
+            nextLink: Link,
+          }}
+          mapPageUrl={mapPageUrl}
+        />
+      )}
     </StyledWrapper>
   )
 }

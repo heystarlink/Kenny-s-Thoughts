@@ -3,21 +3,13 @@ import Link from "next/link"
 import React from "react"
 import { FiArrowLeft, FiArrowUp } from "react-icons/fi"
 import usePostQuery from "src/hooks/usePostQuery"
-import usePostsQuery from "src/hooks/usePostsQuery"
 
 type Props = {}
 
 const Footer: React.FC<Props> = () => {
   const currentPost = usePostQuery()
-  const posts = usePostsQuery()
-  const currentIndex = posts.findIndex(
-    (post) => post.slug === currentPost?.slug
-  )
-  const newerPost = currentIndex > 0 ? posts[currentIndex - 1] : undefined
-  const olderPost =
-    currentIndex >= 0 && currentIndex < posts.length - 1
-      ? posts[currentIndex + 1]
-      : undefined
+  const newerPost = currentPost?.navigation?.newer
+  const olderPost = currentPost?.navigation?.older
 
   return (
     <StyledWrapper>

@@ -16,3 +16,16 @@ export const COLOR_SET: Record<string, string> = {
   E: "rgb(199 210 254)",
   F: "rgb(209 250 229)",
 }
+
+export const CATEGORY_LABELS: Record<string, string> = {
+  Backend: "后端",
+  Docs: "文档",
+  "💻 Backend": "后端",
+  "📗 Docs": "文档",
+  "😎 Daily": "生活",
+  "😄Coding": "编程",
+  "🤖 Computer Science": "计算机基础",
+}
+
+export const getCategoryLabel = (category: string) =>
+  CATEGORY_LABELS[category] || category

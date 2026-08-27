@@ -34,8 +34,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const posts = await getPosts()
   const feedPosts = filterPosts(posts)
-  await queryClient.prefetchQuery(queryKey.posts(), () => feedPosts)
-
   const detailPosts = filterPosts(posts, filter)
   const postDetail = detailPosts.find((t: any) => t.slug === slug)
   if (!postDetail) {
@@ -52,11 +50,25 @@ export const getStaticProps: GetStaticProps = async (context) => {
       recordMap,
       `${postDetail.title} - ${CONFIG.blog.description}`
     )
+  const currentIndex = feedPosts.findIndex((post) => post.slug === slug)
+  const newerPost = currentIndex > 0 ? feedPosts[currentIndex - 1] : undefined
+  const olderPost =
+    currentIndex >= 0 && currentIndex < feedPosts.length - 1
+      ? feedPosts[currentIndex + 1]
+      : undefined
 
   await queryClient.prefetchQuery(queryKey.post(`${slug}`), () => ({
     ...postDetail,
     summary,
     recordMap,
+    navigation: {
+      ...(newerPost && {
+        newer: { slug: newerPost.slug, title: newerPost.title },
+      }),
+      ...(olderPost && {
+        older: { slug: olderPost.slug, title: olderPost.title },
+      }),
+    },
   }))
 
   return {

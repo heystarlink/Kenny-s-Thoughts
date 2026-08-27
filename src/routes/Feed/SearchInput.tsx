@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import React, { InputHTMLAttributes } from "react"
-import { Emoji } from "src/components/Emoji"
+import { FiSearch } from "react-icons/fi"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {}
 
@@ -8,7 +8,8 @@ const SearchInput: React.FC<Props> = ({ ...props }) => {
   return (
     <StyledWrapper>
       <label className="top" htmlFor="post-search">
-        <Emoji>🔎</Emoji> 搜索
+        <FiSearch aria-hidden="true" />
+        搜索
       </label>
       <input
         id="post-search"
@@ -30,7 +31,9 @@ const StyledWrapper = styled.div`
     margin-bottom: 2rem;
   }
   > .top {
-    display: block;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
     padding: 0.25rem;
     margin-bottom: 0.75rem;
   }

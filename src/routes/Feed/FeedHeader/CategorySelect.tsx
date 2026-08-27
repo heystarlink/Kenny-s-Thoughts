@@ -5,6 +5,7 @@ import { MdExpandMore } from "react-icons/md"
 import { DEFAULT_CATEGORY } from "src/constants"
 import styled from "@emotion/styled"
 import { useCategoriesQuery } from "src/hooks/useCategoriesQuery"
+import { getCategoryLabel } from "src/components/Category/constants"
 
 type Props = {}
 
@@ -33,7 +34,9 @@ const CategorySelect: React.FC<Props> = () => {
         aria-haspopup="menu"
         aria-expanded={opened}
       >
-        {currentCategory === DEFAULT_CATEGORY ? "全部文章" : currentCategory}
+        {currentCategory === DEFAULT_CATEGORY
+          ? "全部文章"
+          : getCategoryLabel(currentCategory)}
         <MdExpandMore aria-hidden="true" />
       </button>
       {opened && (
@@ -46,7 +49,9 @@ const CategorySelect: React.FC<Props> = () => {
               key={key}
               onClick={() => handleOptionClick(key)}
             >
-              {`${key === DEFAULT_CATEGORY ? "全部" : key} (${data[key]})`}
+              {`${
+                key === DEFAULT_CATEGORY ? "全部" : getCategoryLabel(key)
+              } (${data[key]})`}
             </button>
           ))}
         </div>

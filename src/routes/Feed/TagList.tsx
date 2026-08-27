@@ -1,14 +1,15 @@
 import styled from "@emotion/styled"
 import { useRouter } from "next/router"
 import React from "react"
-import { Emoji } from "src/components/Emoji"
+import { FiTag } from "react-icons/fi"
 import { useTagsQuery } from "src/hooks/useTagsQuery"
 
 type Props = {}
 
 const TagList: React.FC<Props> = () => {
   const router = useRouter()
-  const currentTag = router.query.tag || undefined
+  const currentTag =
+    typeof router.query.tag === "string" ? router.query.tag : undefined
   const data = useTagsQuery()
 
   const handleClickTag = (value: any) => {
@@ -35,7 +36,8 @@ const TagList: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div className="top">
-        <Emoji>🏷️</Emoji> 主题
+        <FiTag aria-hidden="true" />
+        主题
       </div>
       <div className="list" aria-label="按主题筛选">
         {Object.keys(data).map((key) => (
@@ -44,9 +46,11 @@ const TagList: React.FC<Props> = () => {
             key={key}
             data-active={key === currentTag}
             aria-pressed={key === currentTag}
+            aria-label={`${key}，${data[key]} 篇文章`}
             onClick={() => handleClickTag(key)}
           >
-            {key}
+            <span>{key}</span>
+            <span className="count">{data[key]}</span>
           </button>
         ))}
       </div>
@@ -59,11 +63,13 @@ export default TagList
 const StyledWrapper = styled.div`
   .top {
     display: none;
+    gap: 0.5rem;
+    align-items: center;
     padding: 0.25rem;
     margin-bottom: 0.75rem;
 
     @media (min-width: 1024px) {
-      display: block;
+      display: flex;
     }
   }
 
@@ -85,7 +91,10 @@ const StyledWrapper = styled.div`
     }
 
     button {
-      display: block;
+      display: inline-flex;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
       min-height: 2.5rem;
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
@@ -93,7 +102,7 @@ const StyledWrapper = styled.div`
       padding-right: 1rem;
       margin-top: 0.25rem;
       margin-bottom: 0.25rem;
-      border-radius: 0.75rem;
+      border-radius: 0.5rem;
       font-size: 0.875rem;
       line-height: 1.25rem;
       color: ${({ theme }) => theme.colors.gray10};
@@ -101,12 +110,27 @@ const StyledWrapper = styled.div`
       cursor: pointer;
       text-align: left;
 
+      @media (min-width: 1024px) {
+        width: 100%;
+      }
+
+      .count {
+        color: ${({ theme }) => theme.colors.gray9};
+        font-size: 0.75rem;
+        font-variant-numeric: tabular-nums;
+      }
+
       :hover {
         background-color: ${({ theme }) => theme.colors.gray4};
       }
       &[data-active="true"] {
         color: ${({ theme }) => theme.colors.gray12};
         background-color: ${({ theme }) => theme.colors.gray4};
+        font-weight: 600;
+
+        .count {
+          color: ${({ theme }) => theme.colors.gray11};
+        }
 
         :hover {
           background-color: ${({ theme }) => theme.colors.gray4};

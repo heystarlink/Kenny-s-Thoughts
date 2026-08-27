@@ -36,8 +36,14 @@ export type TPost = {
   thumbnail?: string
 }
 
+export type PostNavigationItem = Pick<TPost, "slug" | "title">
+
 export type PostDetail = TPost & {
   recordMap: ExtendedRecordMap
+  navigation?: {
+    newer?: PostNavigationItem
+    older?: PostNavigationItem
+  }
 }
 
 export type TPosts = TPost[]

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import React from "react"
-import { COLOR_SET } from "./constants"
+import { COLOR_SET, getCategoryLabel } from "./constants"
 import styled from "@emotion/styled"
 import { colors } from "src/styles"
 
@@ -23,6 +23,7 @@ type Props = {
 }
 
 const Category: React.FC<Props> = ({ readOnly = false, children }) => {
+  const label = getCategoryLabel(children)
   const content = (
     <StyledWrapper
       css={{
@@ -30,7 +31,7 @@ const Category: React.FC<Props> = ({ readOnly = false, children }) => {
         cursor: readOnly ? "default" : "pointer",
       }}
     >
-      {children}
+      {label}
     </StyledWrapper>
   )
 
