@@ -71,13 +71,13 @@ const StyledWrapper = styled.div`
 
   > .layout {
     display: grid;
-    grid-template-columns: minmax(0, 42rem) 14rem;
-    gap: 3rem;
+    grid-template-columns: minmax(0, 50rem) 12rem;
+    gap: 2rem;
     justify-content: center;
 
     > article {
       min-width: 0;
-      max-width: 42rem;
+      max-width: 50rem;
     }
   }
 

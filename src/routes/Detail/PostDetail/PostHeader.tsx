@@ -45,7 +45,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
                 src={data.thumbnail}
                 css={{ objectFit: "cover" }}
                 fill
-                sizes="(max-width: 767px) calc(100vw - 4rem), 672px"
+                sizes="(max-width: 1023px) calc(100vw - 4rem), 800px"
                 alt={data.title}
               />
             </div>
