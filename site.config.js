@@ -7,13 +7,13 @@ const CONFIG = {
     bio: "给我一个bug，或者一个hug",
     email: "heystarlink@gmail.com",
     linkedin: "",
-    github: "https://github.com/bugscleaner",
+    github: "https://github.com/heystarlink",
     instagram: "",
   },
   projects: [
     {
       name: `Geek漫游指南`,
-      href: "https://github.com/bugscleaner",
+      href: "https://github.com/heystarlink",
     },
   ],
   // blog setting (required)
