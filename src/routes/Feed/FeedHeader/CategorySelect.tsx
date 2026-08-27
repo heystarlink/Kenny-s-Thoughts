@@ -11,11 +11,12 @@ type Props = {}
 const CategorySelect: React.FC<Props> = () => {
   const router = useRouter()
   const data = useCategoriesQuery()
-  const [dropdownRef, opened, handleOpen] = useDropdown()
+  const [dropdownRef, opened, toggle, close] = useDropdown()
 
   const currentCategory = `${router.query.category || ``}` || DEFAULT_CATEGORY
 
   const handleOptionClick = (category: string) => {
+    close()
     router.push({
       query: {
         ...router.query,
@@ -24,20 +25,29 @@ const CategorySelect: React.FC<Props> = () => {
     })
   }
   return (
-    <StyledWrapper>
-      <div ref={dropdownRef} className="wrapper" onClick={handleOpen}>
-        {currentCategory} Posts <MdExpandMore />
-      </div>
+    <StyledWrapper ref={dropdownRef}>
+      <button
+        type="button"
+        className="wrapper"
+        onClick={toggle}
+        aria-haspopup="menu"
+        aria-expanded={opened}
+      >
+        {currentCategory === DEFAULT_CATEGORY ? "全部文章" : currentCategory}
+        <MdExpandMore aria-hidden="true" />
+      </button>
       {opened && (
-        <div className="content">
-          {Object.keys(data).map((key, idx) => (
-            <div
+        <div className="content" role="menu">
+          {Object.keys(data).map((key) => (
+            <button
+              type="button"
+              role="menuitem"
               className="item"
-              key={idx}
+              key={key}
               onClick={() => handleOptionClick(key)}
             >
-              {`${key} (${data[key]})`}
-            </div>
+              {`${key === DEFAULT_CATEGORY ? "全部" : key} (${data[key]})`}
+            </button>
           ))}
         </div>
       )}
@@ -59,6 +69,14 @@ const StyledWrapper = styled.div`
     line-height: 1.75rem;
     font-weight: 700;
     cursor: pointer;
+
+    svg {
+      transition: transform 150ms ease;
+    }
+
+    &[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
   }
   > .content {
     position: absolute;
@@ -70,6 +88,8 @@ const StyledWrapper = styled.div`
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
     > .item {
+      display: block;
+      width: 100%;
       padding: 0.25rem;
       padding-left: 0.5rem;
       padding-right: 0.5rem;
@@ -78,6 +98,7 @@ const StyledWrapper = styled.div`
       line-height: 1.25rem;
       white-space: nowrap;
       cursor: pointer;
+      text-align: left;
 
       :hover {
         background-color: ${({ theme }) => theme.colors.gray4};

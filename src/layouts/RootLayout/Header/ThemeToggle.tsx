@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import React from "react"
-import { Emoji } from "src/components/Emoji"
+import { FiMoon, FiSun } from "react-icons/fi"
 import useScheme from "src/hooks/useScheme"
 
 type Props = {}
@@ -12,15 +12,33 @@ const ThemeToggle: React.FC<Props> = () => {
     setScheme(scheme === "light" ? "dark" : "light")
   }
 
+  const label = scheme === "light" ? "切换到深色模式" : "切换到浅色模式"
+
   return (
-    <StyledWrapper onClick={handleClick}>
-      <Emoji>{scheme === "light" ? "☀️" : "🌙"}</Emoji>
+    <StyledWrapper
+      type="button"
+      onClick={handleClick}
+      aria-label={label}
+      title={label}
+    >
+      {scheme === "light" ? <FiSun /> : <FiMoon />}
     </StyledWrapper>
   )
 }
 
 export default ThemeToggle
 
-const StyledWrapper = styled.div`
-  cursor: pointer;
+const StyledWrapper = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  color: ${({ theme }) => theme.colors.gray11};
+
+  :hover {
+    color: ${({ theme }) => theme.colors.gray12};
+    background-color: ${({ theme }) => theme.colors.gray4};
+  }
 `

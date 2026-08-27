@@ -1,4 +1,4 @@
-import { useRouter } from "next/router"
+import Link from "next/link"
 import React from "react"
 import { COLOR_SET } from "./constants"
 import styled from "@emotion/styled"
@@ -23,15 +23,8 @@ type Props = {
 }
 
 const Category: React.FC<Props> = ({ readOnly = false, children }) => {
-  const router = useRouter()
-
-  const handleClick = (value: string) => {
-    if (readOnly) return
-    router.push(`/?category=${value}`)
-  }
-  return (
+  const content = (
     <StyledWrapper
-      onClick={() => handleClick(children)}
       css={{
         backgroundColor: getColorClassByName(children),
         cursor: readOnly ? "default" : "pointer",
@@ -39,6 +32,14 @@ const Category: React.FC<Props> = ({ readOnly = false, children }) => {
     >
       {children}
     </StyledWrapper>
+  )
+
+  if (readOnly) return content
+
+  return (
+    <StyledLink href={`/?category=${encodeURIComponent(children)}`}>
+      {content}
+    </StyledLink>
   )
 }
 
@@ -55,4 +56,9 @@ const StyledWrapper = styled.div`
   line-height: 1.25rem;
   opacity: 0.9;
   color: ${colors.dark.gray1};
+`
+
+const StyledLink = styled(Link)`
+  display: block;
+  width: fit-content;
 `

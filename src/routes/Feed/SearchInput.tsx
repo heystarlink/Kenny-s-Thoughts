@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import React, { InputHTMLAttributes, ReactNode } from "react"
+import React, { InputHTMLAttributes } from "react"
 import { Emoji } from "src/components/Emoji"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {}
@@ -7,13 +7,14 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {}
 const SearchInput: React.FC<Props> = ({ ...props }) => {
   return (
     <StyledWrapper>
-      <div className="top">
-        <Emoji>🔎</Emoji> Search
-      </div>
+      <label className="top" htmlFor="post-search">
+        <Emoji>🔎</Emoji> 搜索
+      </label>
       <input
+        id="post-search"
         className="mid"
         type="text"
-        placeholder="Search Keyword..."
+        placeholder="搜索标题、摘要或标签"
         {...props}
       />
     </StyledWrapper>
@@ -29,6 +30,7 @@ const StyledWrapper = styled.div`
     margin-bottom: 2rem;
   }
   > .top {
+    display: block;
     padding: 0.25rem;
     margin-bottom: 0.75rem;
   }
@@ -38,8 +40,11 @@ const StyledWrapper = styled.div`
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     border-radius: 1rem;
-    outline-style: none;
     width: 100%;
     background-color: ${({ theme }) => theme.colors.gray4};
+
+    :focus-visible {
+      background-color: ${({ theme }) => theme.colors.gray3};
+    }
   }
 `

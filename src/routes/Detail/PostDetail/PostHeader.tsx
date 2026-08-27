@@ -15,7 +15,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
     <StyledWrapper>
       <h1 className="title">{data.title}</h1>
       {data.type[0] !== "Paper" && (
-        <nav>
+        <div className="metadata">
           <div className="top">
             {data.author && data.author[0] && data.author[0].name && (
               <>
@@ -45,11 +45,12 @@ const PostHeader: React.FC<Props> = ({ data }) => {
                 src={data.thumbnail}
                 css={{ objectFit: "cover" }}
                 fill
+                sizes="(max-width: 767px) calc(100vw - 4rem), 672px"
                 alt={data.title}
               />
             </div>
           )}
-        </nav>
+        </div>
       )}
     </StyledWrapper>
   )
@@ -63,7 +64,7 @@ const StyledWrapper = styled.div`
     line-height: 2.25rem;
     font-weight: 700;
   }
-  nav {
+  .metadata {
     margin-top: 1.5rem;
     color: ${({ theme }) => theme.colors.gray11};
     > .top {

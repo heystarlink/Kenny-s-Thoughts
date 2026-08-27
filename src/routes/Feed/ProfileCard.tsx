@@ -10,11 +10,17 @@ const ProfileCard: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div className="title">
-        <Emoji>💻</Emoji> Profile
+        <Emoji>💻</Emoji> 关于我
       </div>
       <div className="content">
         <div className="top">
-          <Image src={CONFIG.profile.image} fill alt="" />
+          <Image
+            src={CONFIG.profile.image}
+            fill
+            sizes="222px"
+            alt=""
+            css={{ objectFit: "cover" }}
+          />
         </div>
         <div className="mid">
           <div className=" name">{CONFIG.profile.name}</div>

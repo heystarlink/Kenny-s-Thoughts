@@ -40,6 +40,15 @@ export const Global = () => {
           cursor: pointer;
         }
 
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        summary:focus-visible {
+          outline: 2px solid ${theme.colors.blue9};
+          outline-offset: 3px;
+        }
+
         ul {
           padding: 0;
         }
@@ -47,7 +56,9 @@ export const Global = () => {
         // init button
         button {
           all: unset;
+          box-sizing: border-box;
           cursor: pointer;
+          font: inherit;
         }
 
         // init input

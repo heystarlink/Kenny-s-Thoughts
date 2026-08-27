@@ -35,17 +35,19 @@ const TagList: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div className="top">
-        <Emoji>🏷️</Emoji> Tags
+        <Emoji>🏷️</Emoji> 主题
       </div>
-      <div className="list">
+      <div className="list" aria-label="按主题筛选">
         {Object.keys(data).map((key) => (
-          <a
+          <button
+            type="button"
             key={key}
             data-active={key === currentTag}
+            aria-pressed={key === currentTag}
             onClick={() => handleClickTag(key)}
           >
             {key}
-          </a>
+          </button>
         ))}
       </div>
     </StyledWrapper>
@@ -82,9 +84,11 @@ const StyledWrapper = styled.div`
       display: block;
     }
 
-    a {
+    button {
       display: block;
-      padding: 0.25rem;
+      min-height: 2.5rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
       padding-left: 1rem;
       padding-right: 1rem;
       margin-top: 0.25rem;
@@ -95,6 +99,7 @@ const StyledWrapper = styled.div`
       color: ${({ theme }) => theme.colors.gray10};
       flex-shrink: 0;
       cursor: pointer;
+      text-align: left;
 
       :hover {
         background-color: ${({ theme }) => theme.colors.gray4};

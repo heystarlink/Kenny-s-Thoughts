@@ -8,17 +8,21 @@ import {
 } from "react-icons/ai"
 import { CONFIG } from "site.config"
 import { Emoji } from "src/components/Emoji"
+import { resolveExternalUrl } from "src/libs/utils"
 
 const ContactCard: React.FC = () => {
   return (
     <>
       <StyledTitle>
-        <Emoji>💬</Emoji> Contact
+        <Emoji>💬</Emoji> 联系
       </StyledTitle>
       <StyledWrapper>
         {CONFIG.profile.github && (
           <a
-            href={`https://github.com/${CONFIG.profile.github}`}
+            href={resolveExternalUrl(
+              CONFIG.profile.github,
+              "https://github.com/"
+            )}
             rel="noreferrer"
             target="_blank"
           >
@@ -28,7 +32,10 @@ const ContactCard: React.FC = () => {
         )}
         {CONFIG.profile.instagram && (
           <a
-            href={`https://www.instagram.com/${CONFIG.profile.instagram}`}
+            href={resolveExternalUrl(
+              CONFIG.profile.instagram,
+              "https://www.instagram.com/"
+            )}
             rel="noreferrer"
             target="_blank"
           >
@@ -49,7 +56,10 @@ const ContactCard: React.FC = () => {
         )}
         {CONFIG.profile.linkedin && (
           <a
-            href={`https://www.linkedin.com/in/${CONFIG.profile.linkedin}`}
+            href={resolveExternalUrl(
+              CONFIG.profile.linkedin,
+              "https://www.linkedin.com/in/"
+            )}
             rel="noreferrer"
             target="_blank"
           >

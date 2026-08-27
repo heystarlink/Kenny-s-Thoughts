@@ -1,6 +1,7 @@
 import { CONFIG } from "site.config"
 import React from "react"
 import styled from "@emotion/styled"
+import { resolveExternalUrl } from "src/libs/utils"
 
 const d = new Date()
 const y = d.getFullYear()
@@ -14,7 +15,7 @@ const Footer: React.FC<Props> = ({ className }) => {
   return (
     <StyledWrapper className={className}>
       <a
-        href={`https://github.com/${CONFIG.profile.github}`}
+        href={resolveExternalUrl(CONFIG.profile.github, "https://github.com/")}
         target="_blank"
         rel="noreferrer"
       >

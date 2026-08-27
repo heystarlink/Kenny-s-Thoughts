@@ -19,7 +19,7 @@ const CONFIG = {
   // blog setting (required)
   blog: {
     title: "Geek漫游指南",
-    description: "Welcome to Geek漫游指南",
+    description: "关于 Java、后端架构、工程实践与个人思考的中文博客",
     theme: "light"
   },
 

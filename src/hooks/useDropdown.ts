@@ -1,13 +1,14 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from "react"
 
 type useDropdownType = () => [
   React.RefObject<HTMLDivElement>,
   boolean,
+  () => void,
   () => void
 ]
 
 function assertIsNode(e: EventTarget | null): asserts e is Node {
-  if (!e || !('nodeType' in e)) {
+  if (!e || !("nodeType" in e)) {
     throw new Error(`Node expected`)
   }
 }
@@ -16,20 +17,33 @@ const useDropdown: useDropdownType = () => {
   const menuRef = useRef<HTMLDivElement>(null)
   const [isDropdownOpened, setIsDropdownOpened] = useState(false)
 
-  const handleClick: (this: Window, e: MouseEvent) => void = (e) => {
-    if (!menuRef.current) return
-    assertIsNode(e.target)
-    if (menuRef.current.contains(e.target) === false) {
-      setIsDropdownOpened(false)
+  useEffect(() => {
+    if (!isDropdownOpened) return
+
+    const handlePointerDown = (event: MouseEvent) => {
+      if (!menuRef.current) return
+      assertIsNode(event.target)
+      if (!menuRef.current.contains(event.target)) {
+        setIsDropdownOpened(false)
+      }
     }
-  }
 
-  const onOpenBtn = () => {
-    setIsDropdownOpened(true)
-    window.addEventListener('click', handleClick)
-  }
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsDropdownOpened(false)
+    }
 
-  return [menuRef, isDropdownOpened, onOpenBtn]
+    window.addEventListener("mousedown", handlePointerDown)
+    window.addEventListener("keydown", handleKeyDown)
+    return () => {
+      window.removeEventListener("mousedown", handlePointerDown)
+      window.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [isDropdownOpened])
+
+  const toggle = () => setIsDropdownOpened((opened) => !opened)
+  const close = () => setIsDropdownOpened(false)
+
+  return [menuRef, isDropdownOpened, toggle, close]
 }
 
 export default useDropdown

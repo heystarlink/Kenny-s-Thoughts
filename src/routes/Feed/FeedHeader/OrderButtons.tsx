@@ -20,19 +20,23 @@ const OrderButtons: React.FC<Props> = () => {
     })
   }
   return (
-    <StyledWrapper>
-      <a
+    <StyledWrapper role="group" aria-label="文章排序">
+      <button
+        type="button"
         data-active={currentOrder === "desc"}
+        aria-pressed={currentOrder === "desc"}
         onClick={() => handleClickOrderBy("desc")}
       >
-        Desc
-      </a>
-      <a
+        最新
+      </button>
+      <button
+        type="button"
         data-active={currentOrder === "asc"}
+        aria-pressed={currentOrder === "asc"}
         onClick={() => handleClickOrderBy("asc")}
       >
-        Asc
-      </a>
+        最早
+      </button>
     </StyledWrapper>
   )
 }
@@ -44,7 +48,8 @@ const StyledWrapper = styled.div`
   gap: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  a {
+  button {
+    padding: 0.35rem 0.25rem;
     cursor: pointer;
     color: ${({ theme }) => theme.colors.gray10};
 
