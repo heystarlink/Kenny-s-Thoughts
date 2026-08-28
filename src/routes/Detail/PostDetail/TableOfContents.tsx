@@ -83,7 +83,6 @@ const tocLinks = css`
 
   nav a:hover {
     color: var(--toc-active-color);
-    background-color: ${({ theme }) => theme.colors.gray4};
   }
 `
 
@@ -111,6 +110,10 @@ const StyledDesktop = styled.aside`
     margin-bottom: 0.5rem;
     font-size: 0.875rem;
     font-weight: 600;
+  }
+
+  nav a:hover {
+    background-color: ${({ theme }) => theme.colors.gray4};
   }
 
   ${tocLinks}
@@ -153,6 +156,10 @@ const StyledMobile = styled.div`
 
   details[open] .chevron {
     transform: rotate(180deg);
+  }
+
+  nav a:hover {
+    background-color: ${({ theme }) => theme.colors.gray4};
   }
 
   nav {
