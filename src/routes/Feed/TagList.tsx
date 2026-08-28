@@ -37,9 +37,9 @@ const TagList: React.FC<Props> = () => {
     <StyledWrapper>
       <div className="top">
         <FiTag aria-hidden="true" />
-        主题
+        标签
       </div>
-      <div className="list" aria-label="按主题筛选">
+      <div className="list" aria-label="按标签筛选">
         {Object.keys(data).map((key) => (
           <button
             type="button"

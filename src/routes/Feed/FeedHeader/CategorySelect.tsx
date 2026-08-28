@@ -35,7 +35,7 @@ const CategorySelect: React.FC<Props> = () => {
         aria-expanded={opened}
       >
         {currentCategory === DEFAULT_CATEGORY
-          ? "全部文章"
+          ? "全部分类"
           : getCategoryLabel(currentCategory)}
         <MdExpandMore aria-hidden="true" />
       </button>
