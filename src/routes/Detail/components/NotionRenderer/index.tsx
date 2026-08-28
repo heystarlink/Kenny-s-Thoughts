@@ -121,6 +121,11 @@ const StyledWrapper = styled.div`
     padding: 0;
   }
 
+  .notion {
+    --notion-max-width: 100%;
+    width: 100%;
+  }
+
   .notion-h1,
   .notion-h2,
   .notion-h3,
