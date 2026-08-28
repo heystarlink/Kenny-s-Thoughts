@@ -19,7 +19,7 @@ const ProfileCard: React.FC<Props> = () => {
             src={CONFIG.profile.image}
             fill
             priority
-            sizes="150px"
+            sizes="72px"
             alt=""
             css={{ objectFit: "cover" }}
           />
@@ -27,7 +27,6 @@ const ProfileCard: React.FC<Props> = () => {
         <div className="mid">
           <div className=" name">{CONFIG.profile.name}</div>
           <div className="role">{CONFIG.profile.role}</div>
-          <div className="text-sm mb-2">{CONFIG.profile.bio}</div>
         </div>
       </div>
     </StyledWrapper>
@@ -45,20 +44,18 @@ const StyledWrapper = styled.div`
     margin-bottom: 0.75rem;
   }
   > .content {
+    display: flex;
     margin-bottom: 2.25rem;
-    border-radius: 1rem;
+    gap: 0.75rem;
+    align-items: flex-start;
     width: 100%;
-    background-color: ${({ theme }) =>
-      theme.scheme === "light" ? "white" : theme.colors.gray4};
-    @media (min-width: 768px) {
-      padding: 1rem;
-    }
-    @media (min-width: 1024px) {
-      padding: 1rem;
-    }
+
     .top {
+      overflow: hidden;
       position: relative;
-      width: 100%;
+      width: 4.5rem;
+      flex-shrink: 0;
+      border-radius: 0.5rem;
       &:after {
         content: "";
         display: block;
@@ -67,25 +64,20 @@ const StyledWrapper = styled.div`
     }
     .mid {
       display: flex;
-      padding: 0.5rem;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+      min-width: 0;
       .name {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        font-style: italic;
+        margin-bottom: 0.1rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
         font-weight: 700;
       }
       .role {
-        margin-bottom: 1rem;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
+        margin-bottom: 0.35rem;
+        font-size: 0.8125rem;
+        line-height: 1.2rem;
         color: ${({ theme }) => theme.colors.gray11};
-      }
-      .bio {
-        margin-bottom: 0.5rem;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
       }
     }
   }
