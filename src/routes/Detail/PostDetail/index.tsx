@@ -62,7 +62,7 @@ const StyledWrapper = styled.div`
   padding-top: 3rem;
   padding-bottom: 3rem;
   border-radius: 0.5rem;
-  max-width: 68rem;
+  max-width: 80rem;
   background-color: ${({ theme }) =>
     theme.scheme === "light" ? "white" : theme.colors.gray4};
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -71,13 +71,13 @@ const StyledWrapper = styled.div`
 
   > .layout {
     display: grid;
-    grid-template-columns: minmax(0, 50rem) 12rem;
+    grid-template-columns: minmax(0, 56rem) 13rem;
     gap: 2rem;
     justify-content: center;
 
     > article {
       min-width: 0;
-      max-width: 50rem;
+      max-width: 56rem;
     }
   }
 
