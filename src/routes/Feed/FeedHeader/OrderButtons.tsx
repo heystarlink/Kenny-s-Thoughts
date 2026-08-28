@@ -45,18 +45,19 @@ export default OrderButtons
 
 const StyledWrapper = styled.div`
   display: flex;
-  gap: 0.5rem;
+  gap: 0.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   button {
-    padding: 0.35rem 0.25rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: 0.375rem;
     cursor: pointer;
     color: ${({ theme }) => theme.colors.gray10};
 
     &[data-active="true"] {
       font-weight: 700;
-
       color: ${({ theme }) => theme.colors.gray12};
+      background-color: ${({ theme }) => theme.colors.gray4};
     }
   }
 `

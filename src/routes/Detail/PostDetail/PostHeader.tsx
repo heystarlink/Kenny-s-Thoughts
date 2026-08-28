@@ -45,7 +45,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
                 src={data.thumbnail}
                 css={{ objectFit: "cover" }}
                 fill
-                sizes="(max-width: 1023px) calc(100vw - 4rem), 896px"
+                sizes="(max-width: 1023px) calc(100vw - 4rem), 928px"
                 alt={data.title}
               />
             </div>
@@ -60,12 +60,12 @@ export default PostHeader
 
 const StyledWrapper = styled.div`
   .title {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+    font-size: 2.25rem;
+    line-height: 2.85rem;
     font-weight: 700;
   }
   .metadata {
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
     color: ${({ theme }) => theme.colors.gray11};
     > .top {
       display: flex;
@@ -103,7 +103,7 @@ const StyledWrapper = styled.div`
       overflow: hidden;
       position: relative;
       margin-bottom: 1.75rem;
-      border-radius: 1.5rem;
+      border-radius: 0.5rem;
       width: 100%;
       background-color: ${({ theme }) => theme.colors.gray4};
       padding-bottom: 66%;
@@ -111,6 +111,13 @@ const StyledWrapper = styled.div`
       @media (min-width: 1024px) {
         padding-bottom: 50%;
       }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .title {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
     }
   }
 `

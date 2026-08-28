@@ -65,14 +65,16 @@ const tocLinks = css`
   nav {
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.2rem;
   }
 
   nav a {
     display: block;
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
+    padding-top: 0.35rem;
+    padding-right: 0.4rem;
+    padding-bottom: 0.35rem;
     overflow: hidden;
+    border-radius: 0.375rem;
     font-size: 0.8125rem;
     line-height: 1.35rem;
     color: var(--toc-color);
@@ -81,6 +83,7 @@ const tocLinks = css`
 
   nav a:hover {
     color: var(--toc-active-color);
+    background-color: ${({ theme }) => theme.colors.gray4};
   }
 `
 
@@ -96,7 +99,7 @@ const StyledDesktop = styled.aside`
     top: 5rem;
     align-self: start;
     max-height: calc(100vh - 7rem);
-    padding-left: 1.25rem;
+    padding-left: 1.5rem;
     overflow-y: auto;
     border-left: 1px solid ${({ theme }) => theme.colors.gray6};
   }
@@ -127,6 +130,7 @@ const StyledMobile = styled.div`
     padding: 0.75rem 1rem;
     border: 1px solid ${({ theme }) => theme.colors.gray6};
     border-radius: 0.5rem;
+    background-color: ${({ theme }) => theme.colors.gray3};
   }
 
   summary {

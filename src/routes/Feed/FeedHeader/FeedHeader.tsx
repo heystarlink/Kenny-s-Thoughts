@@ -43,7 +43,8 @@ export default FeedHeader
 
 const StyledWrapper = styled.div`
   display: flex;
-  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid ${({ theme }) => theme.colors.gray6};
@@ -55,9 +56,9 @@ const StyledWrapper = styled.div`
   }
 
   .featured {
-    padding: 0.3rem 0.6rem;
+    padding: 0.35rem 0.65rem;
     border: 1px solid ${({ theme }) => theme.colors.gray6};
-    border-radius: 0.5rem;
+    border-radius: 0.375rem;
     font-size: 0.8125rem;
     color: ${({ theme }) => theme.colors.gray10};
     cursor: pointer;

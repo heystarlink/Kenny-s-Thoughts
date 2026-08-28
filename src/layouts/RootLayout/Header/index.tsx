@@ -29,17 +29,17 @@ const StyledWrapper = styled.div`
   position: sticky;
   top: 0;
   background-color: ${({ theme }) => theme.colors.gray2};
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray6};
 
   .container {
     display: flex;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1280px;
-    height: 3rem;
+    max-width: 1400px;
+    height: 4rem;
     margin: 0 auto;
     &[data-full-width="true"] {
       @media (min-width: 768px) {
@@ -51,6 +51,13 @@ const StyledWrapper = styled.div`
       display: flex;
       gap: 0.75rem;
       align-items: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 `

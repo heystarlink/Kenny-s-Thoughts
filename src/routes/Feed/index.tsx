@@ -12,7 +12,7 @@ import ContactCard from "./ContactCard"
 import PostList from "./PostList"
 import FeedIntro from "./FeedIntro"
 
-const HEADER_HEIGHT = 73
+const HEADER_HEIGHT = 64
 
 type Props = {}
 
@@ -62,23 +62,23 @@ const Feed: React.FC<Props> = () => {
 export default Feed
 
 const StyledWrapper = styled.div`
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: minmax(10rem, 12rem) minmax(0, 1fr) minmax(12rem, 14rem);
 
-  padding: 2rem 0;
+  padding: 2.5rem 0 3rem;
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
 
   @media (max-width: 768px) {
     display: block;
-    padding: 0.5rem 0;
+    padding: 1rem 0 2rem;
   }
 
   > .lt {
     display: none;
     overflow: scroll;
     position: sticky;
-    grid-column: span 2 / span 2;
-    top: ${HEADER_HEIGHT - 10}px;
+    grid-column: 1;
+    top: ${HEADER_HEIGHT + 16}px;
 
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -95,7 +95,7 @@ const StyledWrapper = styled.div`
     grid-column: span 12 / span 12;
 
     @media (min-width: 1024px) {
-      grid-column: span 8 / span 8;
+      grid-column: 2;
     }
 
     > .tags {
@@ -124,11 +124,11 @@ const StyledWrapper = styled.div`
     display: none;
     overflow: scroll;
     position: sticky;
-    top: ${HEADER_HEIGHT - 10}px;
+    top: ${HEADER_HEIGHT + 16}px;
 
     @media (min-width: 1024px) {
       display: block;
-      grid-column: span 2 / span 2;
+      grid-column: 3;
     }
 
     .footer {

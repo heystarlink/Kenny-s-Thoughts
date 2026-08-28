@@ -30,7 +30,7 @@ export default ReadingProgress
 const StyledProgress = styled.div`
   position: fixed;
   z-index: ${({ theme }) => theme.zIndexes.header + 1};
-  top: 3rem;
+  top: 4rem;
   left: 0;
   height: 3px;
   background-color: ${({ theme }) => theme.colors.blue9};

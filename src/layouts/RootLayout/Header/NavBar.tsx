@@ -23,10 +23,22 @@ const StyledWrapper = styled.div`
   ul {
     display: flex;
     flex-direction: row;
+    gap: 0.25rem;
+
     li {
       display: block;
-      margin-left: 1rem;
       color: ${({ theme }) => theme.colors.gray11};
+
+      a {
+        display: block;
+        padding: 0.5rem;
+        border-radius: 0.375rem;
+
+        :hover {
+          color: ${({ theme }) => theme.colors.gray12};
+          background-color: ${({ theme }) => theme.colors.gray4};
+        }
+      }
     }
   }
 `

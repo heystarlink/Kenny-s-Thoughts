@@ -32,9 +32,9 @@ const StyledWrapper = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.375rem;
   color: ${({ theme }) => theme.colors.gray11};
 
   :hover {

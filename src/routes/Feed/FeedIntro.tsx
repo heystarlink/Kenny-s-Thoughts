@@ -23,25 +23,27 @@ const StyledWrapper = styled.section`
   gap: 1rem;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 0.25rem 0.25rem 1.5rem;
+  padding: 0.25rem 0 1.75rem;
 
   h1 {
-    margin-bottom: 0.35rem;
-    font-size: 1.75rem;
-    line-height: 2.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
     font-weight: 700;
   }
 
   p {
     margin: 0;
-    max-width: 34rem;
+    max-width: 42rem;
     line-height: 1.7;
     color: ${({ theme }) => theme.colors.gray11};
   }
 
   > span {
     flex-shrink: 0;
-    padding-bottom: 0.2rem;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid ${({ theme }) => theme.colors.gray6};
+    border-radius: 0.375rem;
     font-size: 0.875rem;
     color: ${({ theme }) => theme.colors.gray10};
   }
@@ -51,8 +53,8 @@ const StyledWrapper = styled.section`
     padding-bottom: 1.25rem;
 
     h1 {
-      font-size: 1.5rem;
-      line-height: 2rem;
+      font-size: 1.75rem;
+      line-height: 2.25rem;
     }
 
     > span {

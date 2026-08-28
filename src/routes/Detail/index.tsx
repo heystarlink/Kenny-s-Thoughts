@@ -22,9 +22,13 @@ const Detail: React.FC<Props> = () => {
 export default Detail
 
 const StyledWrapper = styled.div`
-  padding: 2rem 0;
+  padding: 2.5rem 0 4rem;
 
   &[data-type="Paper"] {
-    padding: 40px 0;
+    padding: 2.5rem 0 4rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem 0 2rem;
   }
 `

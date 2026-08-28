@@ -75,8 +75,8 @@ const StyledWrapper = styled.div`
 
   .list {
     display: flex;
-    margin-bottom: 1.5rem;
-    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+    gap: 0.35rem;
     overflow: scroll;
 
     scrollbar-width: none;
@@ -92,17 +92,15 @@ const StyledWrapper = styled.div`
 
     button {
       display: inline-flex;
-      gap: 0.75rem;
+      gap: 0.5rem;
       align-items: center;
       justify-content: space-between;
-      min-height: 2.5rem;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      min-height: 2.25rem;
+      padding: 0.4rem 0.75rem;
       margin-top: 0.25rem;
       margin-bottom: 0.25rem;
       border-radius: 0.5rem;
+      border-left: 2px solid transparent;
       font-size: 0.875rem;
       line-height: 1.25rem;
       color: ${({ theme }) => theme.colors.gray10};
@@ -126,6 +124,7 @@ const StyledWrapper = styled.div`
       &[data-active="true"] {
         color: ${({ theme }) => theme.colors.gray12};
         background-color: ${({ theme }) => theme.colors.gray4};
+        border-left-color: ${({ theme }) => theme.colors.blue9};
         font-weight: 600;
 
         .count {

@@ -57,32 +57,28 @@ const PostDetail: React.FC<Props> = () => {
 export default PostDetail
 
 const StyledWrapper = styled.div`
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3.5rem 2rem 4rem;
+  border: 1px solid ${({ theme }) => theme.colors.gray6};
   border-radius: 0.5rem;
-  max-width: 80rem;
+  max-width: 84rem;
   background-color: ${({ theme }) =>
     theme.scheme === "light" ? "white" : theme.colors.gray4};
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   margin: 0 auto;
 
   > .layout {
     display: grid;
-    grid-template-columns: minmax(0, 56rem) 13rem;
-    gap: 2rem;
+    grid-template-columns: minmax(0, 58rem) 14rem;
+    gap: 2.5rem;
     justify-content: center;
 
     > article {
       min-width: 0;
-      max-width: 56rem;
+      max-width: 58rem;
     }
   }
 
   @media (max-width: 1023px) {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
 
     > .layout {
       display: block;

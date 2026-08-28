@@ -71,29 +71,28 @@ const PostCard: React.FC<Props> = ({ data }) => {
 export default PostCard
 
 const StyledWrapper = styled(Link)`
+  display: block;
+
   article {
     overflow: hidden;
     position: relative;
-    margin-bottom: 1.5rem;
-    border-radius: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid ${({ theme }) => theme.colors.gray6};
+    border-radius: 0.5rem;
     background-color: ${({ theme }) =>
       theme.scheme === "light" ? "white" : theme.colors.gray4};
-    transition-property: box-shadow;
+    transition-property: border-color, box-shadow;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
 
     @media (min-width: 768px) {
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
     }
 
-    :hover {
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-        0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    }
     > .category {
       position: absolute;
-      top: 1rem;
-      left: 1rem;
+      top: 1.25rem;
+      left: 1.25rem;
       z-index: 10;
     }
 
@@ -108,10 +107,14 @@ const StyledWrapper = styled(Link)`
       }
     }
     > .content {
-      padding: 1rem;
+      padding: 1.25rem;
+
+      @media (min-width: 768px) {
+        padding: 1.5rem;
+      }
 
       &[data-thumb="false"] {
-        padding-top: 3.5rem;
+        padding-top: 3.75rem;
       }
       &[data-category="false"] {
         padding-top: 1.5rem;
@@ -126,22 +129,22 @@ const StyledWrapper = styled(Link)`
           align-items: baseline;
         }
         h2 {
-          margin-bottom: 0.5rem;
-          font-size: 1.125rem;
-          line-height: 1.75rem;
-          font-weight: 500;
+          margin-bottom: 0.6rem;
+          font-size: 1.25rem;
+          line-height: 1.8rem;
+          font-weight: 650;
 
           cursor: pointer;
 
           @media (min-width: 768px) {
-            font-size: 1.25rem;
-            line-height: 1.75rem;
+            font-size: 1.375rem;
+            line-height: 1.9rem;
           }
         }
       }
       > .date {
         display: flex;
-        margin-bottom: 1rem;
+          margin-bottom: 0.85rem;
         gap: 0.5rem;
         align-items: center;
         .content {
@@ -161,14 +164,28 @@ const StyledWrapper = styled(Link)`
           color: ${({ theme }) => theme.colors.gray11};
 
           @media (min-width: 768px) {
-            display: block;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
           }
         }
       }
       > .tags {
         display: flex;
+        flex-wrap: wrap;
         gap: 0.5rem;
       }
     }
+  }
+
+  &:hover article {
+    border-color: ${({ theme }) => theme.colors.gray8};
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  &:focus-visible article {
+    outline: 2px solid ${({ theme }) => theme.colors.blue9};
+    outline-offset: 3px;
   }
 `

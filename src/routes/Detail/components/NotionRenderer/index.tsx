@@ -120,4 +120,11 @@ const StyledWrapper = styled.div`
   .notion-page {
     padding: 0;
   }
+
+  .notion-h1,
+  .notion-h2,
+  .notion-h3,
+  .notion-h4 {
+    scroll-margin-top: 5.5rem;
+  }
 `

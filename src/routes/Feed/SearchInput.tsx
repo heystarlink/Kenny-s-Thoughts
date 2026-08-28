@@ -28,25 +28,27 @@ const StyledWrapper = styled.div`
   margin-bottom: 1rem;
 
   @media (min-width: 768px) {
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
   }
   > .top {
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    padding: 0.25rem;
-    margin-bottom: 0.75rem;
+    padding: 0.25rem 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
   }
   > .mid {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    border-radius: 1rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid ${({ theme }) => theme.colors.gray6};
+    border-radius: 0.5rem;
     width: 100%;
     background-color: ${({ theme }) => theme.colors.gray4};
 
     :focus-visible {
+      border-color: ${({ theme }) => theme.colors.blue8};
       background-color: ${({ theme }) => theme.colors.gray3};
     }
   }
