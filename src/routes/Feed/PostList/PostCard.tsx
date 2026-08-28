@@ -27,7 +27,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
             <Image
               src={data.thumbnail}
               fill
-              sizes="(max-width: 1023px) calc(100vw - 2rem), 620px"
+              sizes="(max-width: 1023px) calc(100vw - 2rem), 800px"
               alt={data.title}
               css={{ objectFit: "cover" }}
             />
