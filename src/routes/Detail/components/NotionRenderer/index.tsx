@@ -2,6 +2,7 @@ import dynamic from "next/dynamic"
 import Image from "next/image"
 import Link from "next/link"
 import { ExtendedRecordMap } from "notion-types"
+import { NotionRenderer as BaseNotionRenderer } from "react-notion-x"
 import useScheme from "src/hooks/useScheme"
 import { FC, useEffect, useMemo, useRef, useState } from "react"
 import Prism from "prismjs/prism"
@@ -20,11 +21,6 @@ import "prismjs/themes/prism-tomorrow.css"
 
 import "katex/dist/katex.min.css"
 import styled from "@emotion/styled"
-
-const _NotionRenderer = dynamic(
-  () => import("react-notion-x").then((m) => m.NotionRenderer),
-  { ssr: false }
-)
 
 const Code = dynamic(() =>
   import("react-notion-x/build/third-party/code").then(async (m) => m.Code)
@@ -90,22 +86,20 @@ const NotionRenderer: FC<Props> = ({ recordMap }) => {
 
   return (
     <StyledWrapper ref={wrapperRef}>
-      {languagesReady && (
-        <_NotionRenderer
-          darkMode={scheme === "dark"}
-          recordMap={recordMap}
-          components={{
-            Code,
-            Collection,
-            Equation,
-            Modal,
-            Pdf,
-            nextImage: Image,
-            nextLink: Link,
-          }}
-          mapPageUrl={mapPageUrl}
-        />
-      )}
+      <BaseNotionRenderer
+        darkMode={scheme === "dark"}
+        recordMap={recordMap}
+        components={{
+          Code,
+          Collection,
+          Equation,
+          Modal,
+          Pdf,
+          nextImage: Image,
+          nextLink: Link,
+        }}
+        mapPageUrl={mapPageUrl}
+      />
     </StyledWrapper>
   )
 }
